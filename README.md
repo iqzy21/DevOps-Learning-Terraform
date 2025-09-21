@@ -186,13 +186,57 @@ terraform analyses your con fig file compares to the state file then creates a p
 desired state = config
 current state = current state 
 
+The output of running terraform plan represents our desired state
 
+what key things should be looked out for ?
+when should you run a terraform plan ?
+what do you do with huge outputted plans ?
+When workinging with large infra u can come across these issues 
 
+plan break down 
+resoyurces actions are indicated with the following symbols:
++ create: resources that re created
+~ update-in-place: Resources that will be modified.
+- destroy: RESOURCES THAT ARE DELETED
 
+terraform will perform these actions:
+AN ec2 instanced (aws_instance.example) will be created
+A security group (aws_security_group.example) will have some properties updated.
+An S3 bucket (aws_s3_bucket.example) will be destroyed.
 
+always run a plan and look at the plan summary 
+<img width="409" height="586" alt="image" src="https://github.com/user-attachments/assets/ab7c888b-ef15-4ebe-a99d-df50c349ebb8" />
 
+## Terraform apply
+Terraform apply takes the plan and applys it to your infrastructure 
+it will create an execute plan theen load up a confermation before starting
+after you say yess terraform will apply the chnages 
 
+resource actions:
+(aws_instance.example): creating
+(aws_security_group.example) modifying
+(aws_s3_bucket.example) destroying 
+<img width="327" height="477" alt="image" src="https://github.com/user-attachments/assets/69fc4c4e-32cb-46d6-83d8-faa30c3d94c6" />
 
+## Terraform destroy
+Terraform destory command is a convinent way to destroy all remote objects managed by a particular Terraform configuration 
+Say you just finished a project and you want to clean up your environment instead of deleting it 1 by 1 terraform destroy allows you to remove everything with saftey 
+its the opposite if terraform apply
+Terraform will read your current config and state file to understand what resources its managing
+similar to a plan it creates a destruction plan telling you what will be deleted 
+then terraform will have a confirmation after that the changes will be made to the state file and also the cloud 
+
+## Resource block
+In terraform a resource block defines a piece of infrastructure you want to manage such as ec2 instance, data base or s3 bucket
+The resource block is where you specify what you want to create 
+break down:
+Resource "aws_instance" "Test" - defines resource type and the name of your resource 
+ami - amazon machine images used to launch your instance determines your instance OS ect
+instance_type - detirmines the configuration of your instance for exampple t2.micro
+tags - a way to label or categorise your resources casn be named anything depening on the enivornment you are in such as dev or prod
+<img width="379" height="218" alt="image" src="https://github.com/user-attachments/assets/3601ee61-62c2-4ba8-b6a7-e4d130fd864f" />
+
+## terraform registary 
 
 
 
