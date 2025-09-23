@@ -271,10 +271,19 @@ import with resoruce name and instance id
 import sucessful 
 <img width="710" height="208" alt="image" src="https://github.com/user-attachments/assets/1a16615a-cd7e-4136-98f5-0b55003a091f" />
 
+## local and remote statefile
+Local state file is a file that terraform stores on your machine in the terraform directory this is straight forward and a simple set up 
+characteristics 
+easy to set up - no additional config to store state file locally
+ideal for single user projects 
+best if there is one user managing the infrastruture 
 
+remote state files are stored in a centralised location which allows a collaberative approach 
+by storing a statefile remotley multiple team mambers can access the same infra state without risking conflict
+helps with automatic locking many remote backends offer state locking this is so that state changes are nto done at once
+automatic backup and encryption security ensure yoiur state is secure and recaverable 
 
-
-
+## Configure Backend with Statefile
 
 
 
