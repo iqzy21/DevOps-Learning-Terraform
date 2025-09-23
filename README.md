@@ -237,14 +237,39 @@ tags - a way to label or categorise your resources casn be named anything depeni
 <img width="379" height="218" alt="image" src="https://github.com/user-attachments/assets/3601ee61-62c2-4ba8-b6a7-e4d130fd864f" />
 
 ## terraform registary 
+this is where you will find the neceessary code for your project 
+<img width="929" height="683" alt="image" src="https://github.com/user-attachments/assets/108eb810-e37a-4ab9-9992-d811b98cadc3" />
 
+## terraform import
+this is a command that allows you to take excisting resources into your cloud environment and then bring them under terraform 
+this is done when you wnat to intergrate terraform with an exisitng infrastructure set up without needing to recreate anything from scratch 
+if you join a compan y that already has recouses that are delpyed to the cloud manually and you want to impliment best practices and iac 
+it would be a pain to delete them and manually create them from scratch
+terraform import allows you to bring those existing resources that were created manualy into you tf environmenr
+first identify the resource on the cloud such as ec2 or s3
+then create a resources block on the terrafrom config 
 
+## terraform importing code block
+import - in terraform v1.5.0+ use and import block to import instnces usingt he id
+<img width="390" height="104" alt="image" src="https://github.com/user-attachments/assets/87b646f3-81df-4dca-aff1-750c3cca34dc" />
 
+## Terraform Importing - Terraform Registry
+heres the import example
+one thing to remember is when importing is run a plan after to make sure the imported resource matches your current state 
+keep running plans after imports to ensure the chnages have been made 
+<img width="796" height="446" alt="image" src="https://github.com/user-attachments/assets/7309c5b3-61a2-4d90-8b5c-014db5665549" />
 
-
-
-
-
+## terraform import ecample 
+create new ec2 
+<img width="779" height="42" alt="image" src="https://github.com/user-attachments/assets/f2b3546f-40b7-40fd-b884-2d3e4db30be1" />
+get import code from tf registary 
+<img width="765" height="396" alt="image" src="https://github.com/user-attachments/assets/c869a33f-9f05-476b-82d8-80f6fd96036b" />
+create a resuurce 
+<img width="494" height="88" alt="image" src="https://github.com/user-attachments/assets/93236387-e32f-4b96-8637-2a847614b43c" />
+import with resoruce name and instance id
+<img width="549" height="133" alt="image" src="https://github.com/user-attachments/assets/b45864b4-14ec-4b85-92fe-2c9223715013" />
+import sucessful 
+<img width="710" height="208" alt="image" src="https://github.com/user-attachments/assets/1a16615a-cd7e-4136-98f5-0b55003a091f" />
 
 
 
