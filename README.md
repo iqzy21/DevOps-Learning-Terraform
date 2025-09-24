@@ -319,12 +319,50 @@ reduce redundancy and potential errors
 standardise variable names for better collaboration 
 
 ## variable types 
+input variable - instea dof hard coding values inpur variables make those values be reuasable and flexible
+input variables let you parameterise teeraform config 
 
+string → "us-east-1"
 
+number → 3
 
+bool → true
 
+list(string) → ["a", "b", "c"]
 
+map(string) → { env = "dev", team = "backend" }
 
+object → complex structures
+variabel belock code 
+<img width="365" height="72" alt="image" src="https://github.com/user-attachments/assets/c9cd2ada-4235-4669-8d81-9fa1704c6645" />
+variable set on ec2 code 
+<img width="406" height="163" alt="image" src="https://github.com/user-attachments/assets/285a3bd1-c505-4b62-ab5a-9d6dc6df78f4" />
+result can input instance type as a string to change all instances 
+<img width="647" height="290" alt="image" src="https://github.com/user-attachments/assets/c770c185-f413-4c96-8433-625e0ec15aeb" />
+
+## Input Variable - terraform.tfvars
+terraform.tfvars setsb a default while not having a hard coded default in this example i have a ahrd coded default 
+<img width="385" height="138" alt="image" src="https://github.com/user-attachments/assets/a6277d48-39d3-4868-a0f4-358ea5c42674" />
+and now this means that all instance types would be set to default how ever this is not best practice as it will be different for different environemtns
+this is where .tfvars comes in you can set a default instance type while it also being changable 
+this means if no instance type has been set in the string the code will look at the .tfvars file
+<img width="341" height="70" alt="image" src="https://github.com/user-attachments/assets/024a70d7-e675-4014-9bb7-f8935addf0e7" />
+<img width="579" height="166" alt="image" src="https://github.com/user-attachments/assets/dc329817-9ae3-4e0c-b797-6a3683d13776" />
+
+## local variables
+local variables allow you to simplify you tf config byb  centralising values that are used repeatidly 
+used to store values that you assign once then use over again in your config
+unlike input variables which are promted by users
+local variables are internal to the tf config 
+they help reduce redundancy and keep ur code DRY
+
+for example if i have a local variable set for an instance ami such as ubuntu any instance made will use this 
+code block for local 
+<img width="407" height="114" alt="image" src="https://github.com/user-attachments/assets/693130b6-adb8-4e29-8be4-dcbfa1dd3984" />
+setting the local variable 
+<img width="456" height="159" alt="image" src="https://github.com/user-attachments/assets/24d9a994-9802-49c1-aa3d-13fc6be80d75" />
+this works as there has been no error or changes to the terraform plan 
+<img width="616" height="154" alt="image" src="https://github.com/user-attachments/assets/2d469ac3-a637-4a09-909b-b7b880194a2a" />
 
 
 
