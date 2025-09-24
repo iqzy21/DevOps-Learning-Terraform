@@ -283,12 +283,42 @@ by storing a statefile remotley multiple team mambers can access the same infra 
 helps with automatic locking many remote backends offer state locking this is so that state changes are nto done at once
 automatic backup and encryption security ensure yoiur state is secure and recaverable 
 
-## Configure Backend with Statefile
+## terraform work flowtf init
+used to initialise the working directory containing the config file
+first command you run after writinga  new config
+downloads providers 
 
+tf validate
+vailidates the config files in the directory to ensurethey are syntaticaly calid and internally consistant
+this means that its checking if your code is wel formed 
 
+tf plan 
+creates an execution plan
+performs a refresg and detirmines what actions are needed to achieve the desired state specified in the config files
+basiccly it checks between the current state to the desired state and what you want to achive
+tells you the necessary actions
 
+tf apply
+after you are happy with the plan you apply
+used to apply the changes required to reach the desired state of the config
+by defaut apply scans the currect directory for the configuartion changes and applies the changes appropriatly 
 
+tf destroy
+used to destroy rhw terraform managed infrastructyure
+will ask for conf b4 
+will take downt the infrastructure without having to manually destroyu all those rescoources 
+<img width="782" height="369" alt="image" src="https://github.com/user-attachments/assets/7354c44c-01da-47dd-b617-6254808d1c6b" />
 
+## variables 
+why are variables used 
+enabkle dynamic config and changes without alearting code
+manage different environemnts with the same config files
+make modules reusable across multiple projects
+define values once and reference them multiple times
+reduce redundancy and potential errors
+standardise variable names for better collaboration 
+
+## variable types 
 
 
 
