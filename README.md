@@ -386,12 +386,47 @@ document outputs always include descriptions makes it clear and terrafrom config
 use outputs for crital info it should expose info for autoomation 
 secure sensitive outputs must be carefull what you are outpuitting 
 
+#variable higharcy 
+lowest priority - default value if no value is specified int he top 3 terrafrom will then use the default value specified in the block 
+second lowest - .tfvars Files this is used for modules and is another default place for teraform values
+third lowest - TF_VAR Environment cariables Useful if you don’t want values hardcoded in files, or if you’re using CI/CD pipelines where secrets (like API keys) come from a secure environment store.
+forth lowest - command line flags Command-line flags are the “final say” and override all other sources (best for temporary or environment-specific overrides).
+<img width="456" height="212" alt="image" src="https://github.com/user-attachments/assets/9992e959-ec98-4ce8-b3f2-8108fdc0d053" />
 
+## types of variables
 
+primitive types
+string some text like "hello"
+number a numberic value
+the number type can represent both whole numbers and fractional numbers
+bool either true or false can be used in conditional logic 
+<img width="434" height="399" alt="image" src="https://github.com/user-attachments/assets/90e06960-cec7-488d-a5d6-8ca7eca1a86f" />
 
+complex types
+list an ordered seequence of values all fo the same type
+map a collection point of key values 
+object a collection of atributes that can have eac different types 
+<img width="371" height="387" alt="image" src="https://github.com/user-attachments/assets/7ef5c842-e027-475d-87a4-852b7f3eaf80" />
 
+## modules 
+why do we use modules
+reusability organisation consistancy and collaberation 
+a terradform module ios collection of config files that are grouped togetehr that server a process
+its like a bluepritn for building a peice of infra 
+used for larger infra or big networking set up
+modules let us package and reuse infrastructure code 
+good for multiple deployment 
+by using the same moduel you ensure consistancy accross environments 
+modules make it easier for teams to collaberate instead of writing their own tf code from scratch it can be shared 
+<img width="744" height="250" alt="image" src="https://github.com/user-attachments/assets/3b9884f6-a30e-4fdf-beb7-cc51f6e176ba" />
 
-
+## what makes a good module 
+a good module should be flexible well document and easy to use
+output values - modules should expose useful outputs if you created a modudle it should out put useful unformation 
+documentation - should be very well documented so people can read it and understand
+avoid hard coding values that might change between values like instance types reigons 
+modularity - keeping modules focused on a single responsibility 
+testing and versioning modules should be done like this to make sure it works 
 
 
 
