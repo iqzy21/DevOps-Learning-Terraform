@@ -364,13 +364,27 @@ setting the local variable
 this works as there has been no error or changes to the terraform plan 
 <img width="616" height="154" alt="image" src="https://github.com/user-attachments/assets/2d469ac3-a637-4a09-909b-b7b880194a2a" />
 
+## output variables
+output variables in tf are used to display values after ur tf apply has completed can be ip address or ids
+usefull for passing information 
 
+to define you use an output block, descriuptiona nd value 
+output block example
+<img width="421" height="93" alt="image" src="https://github.com/user-attachments/assets/a18d8f21-2d33-46d4-8b61-d7190ca6b7f2" />
 
+terraform plan
+<img width="630" height="270" alt="image" src="https://github.com/user-attachments/assets/7c465e9d-fda0-4acc-8630-2dd5f5d7dc0a" />
 
+output
+<img width="297" height="96" alt="image" src="https://github.com/user-attachments/assets/e949606d-0d23-401c-a399-4eaf772ea5c8" />
 
+you can pass this into other areas or use it to find it on the gui
 
-
-
+best practices 
+use descriptive names 
+document outputs always include descriptions makes it clear and terrafrom config easier to understand 
+use outputs for crital info it should expose info for autoomation 
+secure sensitive outputs must be carefull what you are outpuitting 
 
 
 
